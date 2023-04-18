@@ -1,9 +1,22 @@
+import React from 'react';
+import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+import HomeScreen from './screens/HomeScreen';
+import RootLayout from './screens/RootLayout';
+import ProductPage from './screens/ProductPage';
+
+const router = createBrowserRouter([
+  {
+    path: '/',
+    element: <RootLayout />,
+    children: [
+      { path: '/', element: <HomeScreen /> },
+      { path: '/product/:productid', element: <ProductPage /> },
+    ],
+  },
+]);
+
 function App() {
-  return (
-    <>
-      <h1>Welcome To ProShop</h1>
-    </>
-  );
+  return <RouterProvider router={router}></RouterProvider>;
 }
 
 export default App;
