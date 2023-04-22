@@ -7,6 +7,7 @@ export const getProductDetails = createAsyncThunk(
     //---- Action Payload -----//
     try {
       const response = await axios.get(`/api/products/${productId}`);
+      // console.log(response.data);
       return response.data;
     } catch (err) {
       return rejectWithValue(err.response.data.message);
