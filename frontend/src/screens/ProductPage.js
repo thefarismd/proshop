@@ -12,7 +12,7 @@ import {
 } from 'react-bootstrap';
 import { useParams, Link, useNavigate } from 'react-router-dom';
 import Rating from '../components/Rating';
-import { getProductDetails } from '../actions/getProductDetails';
+import { getProductDetails } from '../actions/ProductDetailAction';
 import Loader from '../components/Loader';
 import Message from '../components/Message';
 
