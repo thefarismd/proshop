@@ -1,14 +1,12 @@
 import axios from 'axios';
 import { createAsyncThunk } from '@reduxjs/toolkit';
-import { useSelector } from 'react-redux';
 
 export const addToCart = createAsyncThunk(
-  'cart/addToCart',
+  'cart/addToCart', //Action Type
   async ({ productId, qty }) => {
     const response = await axios.get(`/api/products/${productId}`);
 
-    // console.log(response);
-
+    //New payload : { productId , qty } is the initial payload, item becomes the new payload for cart/addToCart type
     const item = {
       productId: response.data._id,
       name: response.data.name,
@@ -17,7 +15,7 @@ export const addToCart = createAsyncThunk(
       countInStock: response.data.countInStock,
       qty: qty,
     };
-    // console.log(item);
+    //------//
 
     return item;
   }

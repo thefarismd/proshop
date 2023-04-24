@@ -12,8 +12,9 @@ import {
   Card,
   ListGroupItem,
 } from 'react-bootstrap';
-import { addToCart } from '../actions/cartAction';
+import { addToCart } from '../features/async-actions/cartAction';
 import { nanoid } from 'nanoid';
+import { removeFromCart } from '../features/cartSlice';
 
 function CartScreen() {
   const params = useParams();
@@ -32,8 +33,8 @@ function CartScreen() {
     }
   }, [dispatch, productId, qty]);
 
-  const removeFromCartHandler = (productID) => {
-    console.log('test');
+  const removeFromCartHandler = (productId) => {
+    dispatch(removeFromCart(productId));
   };
 
   const checkOutHandler = () => {
@@ -90,7 +91,7 @@ function CartScreen() {
                       <Button
                         type='button'
                         variant='light'
-                        onClick={() => removeFromCartHandler(item.product)}
+                        onClick={() => removeFromCartHandler(item.productId)} //do this when there is parameters
                       >
                         <i className='fas fa-trash'></i>
                       </Button>
