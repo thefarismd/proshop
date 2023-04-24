@@ -1,7 +1,3 @@
-//MODULES
-// const express = require('express');
-// const products = require('./data/products');
-// const dotenv = require('dotenv');
 import express from 'express';
 import dotenv from 'dotenv';
 import connectDB from './config/db.js';
@@ -18,18 +14,6 @@ const app = express();
 app.get('/', (req, res) => {
   res.send('API is running...');
 });
-
-// app.get('/api/products', (req, res) => {
-//   res.json(products);
-// });
-
-// app.get('/api/products/:productid', (req, res) => {
-//   const product = products.find(
-//     (product) => product._id === req.params.productid
-//   );
-
-//   res.json(product);
-// });
 
 app.use('/api/products', productRoutes);
 

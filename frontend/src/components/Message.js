@@ -4,7 +4,7 @@ import { Alert } from 'react-bootstrap';
 function Message(props) {
   return (
     <>
-      <Alert variant={props.variant}>{props.children};</Alert>
+      <Alert variant={props.variant}>{props.children}</Alert>
     </>
   );
 }
