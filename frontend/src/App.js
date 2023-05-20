@@ -5,6 +5,9 @@ import RootLayout from './screens/RootLayout';
 import ProductPage from './screens/ProductPage';
 import CartScreen from './screens/CartScreen';
 import PageNotFound from './screens/PageNotFound';
+import LoginScreen from './screens/LoginScreen';
+import RegisterScreen from './screens/RegisterScreen';
+import ProfileScreen from './screens/ProfileScreen';
 
 const router = createBrowserRouter([
   {
@@ -12,8 +15,11 @@ const router = createBrowserRouter([
     element: <RootLayout />,
     children: [
       { path: '/', element: <HomeScreen /> },
+      { path: '/login', element: <LoginScreen /> },
+      { path: '/register', element: <RegisterScreen /> },
       { path: '/product/:productid', element: <ProductPage /> },
       { path: '/cart/:productid?', element: <CartScreen /> },
+      { path: '/profile', element: <ProfileScreen /> },
       { path: '*', element: <PageNotFound /> },
     ],
   },

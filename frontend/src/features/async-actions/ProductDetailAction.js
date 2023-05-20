@@ -2,7 +2,7 @@ import { createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
 
 export const getProductDetails = createAsyncThunk(
-  'productDetails/getProductDetails', //Action Type
+  'api/getProductDetails', //Action Type
   async (productId, { rejectWithValue }) => {
     //---- Action Payload -----//
     try {
